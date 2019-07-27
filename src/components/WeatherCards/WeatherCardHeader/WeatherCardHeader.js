@@ -1,12 +1,12 @@
 import React from 'react';
 import classes from './WeatherCardHeader.module.scss';
 
-const weatherCardHeader = () => (
+import WeatherCardOptions from'./WeatherCardOptions/WeatherCardOptions';
+
+const weatherCardHeader = (props) => (
     <div className={classes.WeatherCardHeader}>
-        <h3>Location</h3>
-        <p>up</p>
-        <p>down</p>
-        <p>del</p>
+        <h2>{props.location}</h2>
+        <WeatherCardOptions/>
     </div>
 );
 
