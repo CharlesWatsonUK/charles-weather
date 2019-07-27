@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import WeatherCards from '../WeatherCards/WeatherCards';
 import Toolbar from '../Nav/Toolbar/Toolbar';
 import Sidedrawer from '../Nav/Sidedrawer/Sidedrawer';
+import Backdrop from '../UI/Backdrop/Backdrop';
 
 class Layout extends Component {
     
@@ -23,7 +24,7 @@ class Layout extends Component {
         return(
             <div>
                 <Toolbar openCloseSidedrawer={this.openCloseSidedrawerHandler}/>
-                <Sidedrawer open={this.state.sidedrawerOpen}/>
+                <Sidedrawer open={this.state.sidedrawerOpen} closeSidedrawer={this.openCloseSidedrawerHandler}/>
                 <WeatherCards/>
             </div>
         );
