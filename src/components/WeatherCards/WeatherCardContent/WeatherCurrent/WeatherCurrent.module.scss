@@ -1,3 +1,6 @@
-.WeatherCurrent {
-    
+/* Desktop styles */
+@media (min-width: 500px){
+    .WeatherCurrent {
+        display: flex;
+    }
 }

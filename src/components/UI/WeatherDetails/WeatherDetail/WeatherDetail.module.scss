@@ -1,0 +1,17 @@
+.WeatherDetail {
+    margin-left: 20px;
+    text-align: center;
+}
+
+p {
+    margin-left: 5px;
+}
+
+/* Desktop styles */
+@media (min-width: 500px){
+    .WeatherDetail{
+        display: -webkit-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
