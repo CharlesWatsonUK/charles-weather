@@ -1,0 +1,16 @@
+.WeatherCard {
+    margin-top: 7px;
+    box-shadow: 3px 3px 3px rgb(189, 188, 188);
+}
+
+
+/* Desktop styles */
+@media (min-width: 500px){
+    .WeatherCard {
+        box-shadow: 5px;
+        width: 50%;
+        box-shadow: 1em;
+        margin-left: 25%;
+        box-shadow: 3px 3px 3px rgb(189, 188, 188);
+    }
+}
