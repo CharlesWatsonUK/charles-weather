@@ -1,0 +1,22 @@
+.NavItem {
+    list-style: none;
+    height: 100%;
+    text-align: center;
+    color: white;
+    margin-top: 8px;
+}
+
+.NavItemToolbar {
+    @extend .NavItem;
+    width: 8%;
+}
+
+.NavItemSidedrawer {
+    @extend .NavItem;
+    width: 80%;
+}
+
+a:hover {
+    color: rgb(75, 158, 226);
+    cursor: pointer;
+}

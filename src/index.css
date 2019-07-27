@@ -1,8 +1,13 @@
-body {
+html, body {
   font-family: 'Titillium Web', sans-serif;
+  background-color: rgb(164, 189, 226);
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, ul {
   margin-top: 0;
   margin-bottom: 0;
 }
+ 

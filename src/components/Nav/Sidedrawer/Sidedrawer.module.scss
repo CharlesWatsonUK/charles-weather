@@ -1,0 +1,19 @@
+.SideDrawer {
+    width: 70%;
+    height: 600px;
+    position: fixed;
+    background-color: rgb(97, 97, 97);
+    top: 50px;
+    transition: transform 0.3s ease-out;
+    z-index: 200;
+}
+
+.SideDrawerClosed {
+    @extend .SideDrawer;
+    transform: translateX(-100%);
+}
+
+.SideDrawerOpen {
+    @extend .SideDrawer;
+    transform: translateX(0);
+}

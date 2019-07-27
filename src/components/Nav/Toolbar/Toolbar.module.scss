@@ -1,0 +1,32 @@
+.Toolbar {
+    height: 50px;
+    background-color: rgb(65, 65, 65);
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+.ToolbarOptions {
+    display: none;
+}
+
+.MobileMenuBtn {
+    color: white;
+    font-size: 30px;
+    margin: 8px 0px 0px 10px;
+}
+
+/* Desktop styles */
+@media(min-width: 540px){
+    .Toolbar {
+        margin-bottom: 50px;
+    }
+
+    .ToolbarOptions{
+        display: block;
+    }
+
+    .MobileMenuBtn {
+        display: none;
+    }
+}

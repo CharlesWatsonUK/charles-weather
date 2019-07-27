@@ -1,8 +1,10 @@
 import React from 'react';
+import classes from './WeatherCards.module.scss';
+
 import WeatherCard from '../../containers/WeatherCard/WeatherCard';
 
 const weatherCards = () => (
-    <div>
+    <div className={classes.WeatherCards}>
         <WeatherCard/>
         <WeatherCard/>
     </div>

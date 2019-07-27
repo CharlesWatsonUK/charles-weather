@@ -4,8 +4,24 @@
 
 .Info {
     display: flex;
+
 }
 
 h3 {
     margin-left: 15px;
+}
+
+@media (min-width: 500px){
+    .WeatherSummary {
+        width: 30%
+    }
+
+    .Info {
+        display: block;
+    }
+
+    h3 {
+        margin: 0;
+    }
+    
 }
