@@ -4,10 +4,10 @@ import classes from './WeatherCurrent.module.scss';
 import WeatherSummary from '../../../UI/WeatherSummary/WeatherSummary';
 import WeatherDetails from '../../../UI/WeatherDetails/WeatherDetails';
 
-const weatherCurrent = () => (
+const weatherCurrent = (props) => (
     <div className={classes.WeatherCurrent}>
-        <WeatherSummary/>
-        <WeatherDetails/>
+        <WeatherSummary weather={props.weather}/>
+        <WeatherDetails weather={props.weather}/>
     </div>
 );
 

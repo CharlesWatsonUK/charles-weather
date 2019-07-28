@@ -3,9 +3,9 @@ import classes from './WeatherCardContent.module.scss';
 
 import WeatherCurrent from './WeatherCurrent/WeatherCurrent';
 
-const weatherCardContent = () => (
+const weatherCardContent = (props) => (
     <div>
-        <WeatherCurrent/>
+        <WeatherCurrent weather={props.currentWeather}/>
     </div>
 );
 

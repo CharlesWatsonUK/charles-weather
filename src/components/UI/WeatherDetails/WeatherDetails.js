@@ -3,14 +3,20 @@ import classes from './WeatherDetails.module.scss'
 
 import WeatherDetail from './WeatherDetail/WeatherDetail';
 
+const weatherDetails = (props) => {
+    const windInfo = `${props.weather.windSpeed} M/S, ${props.weather.windDirection}°`;
+    const humidity = `${props.weather.humidity}%`;
+    const pressure = `${props.weather.pressure} hPa`;
 
-const weatherDetails = () => (
-    <div className={classes.WeatherDetails}>
-        <WeatherDetail info='15 mph, NE' iconClass='fas fa-wind'/>
-        <WeatherDetail info='36%' iconClass='fas fa-water'/>
-        <WeatherDetail info='370 kPa' iconClass='fas fa-tachometer-alt'/>
-        <WeatherDetail info='3720' iconClass='fas fa-male'/>
-    </div>
-);
+    return(
+        <div className={classes.WeatherDetails}>
+            <WeatherDetail key='wind' info={windInfo} iconClass='fas fa-wind'/>
+            <WeatherDetail key='humidity' info={humidity} iconClass='fas fa-water'/>
+            <WeatherDetail key='pressure' info={pressure} iconClass='fas fa-tachometer-alt'/>
+            <WeatherDetail key='population' info='0' iconClass='fas fa-male'/>
+        </div>
+    );
+    
+}
 
 export default weatherDetails;
