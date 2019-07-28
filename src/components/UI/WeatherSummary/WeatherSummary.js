@@ -5,10 +5,10 @@ import WeatherImage from './WeatherImage/WeatherImage';
 
 const weatherSummary = (props) => (
     <div className={classes.WeatherSummary}>
-        <WeatherImage/>
+        <WeatherImage icon={props.weather.iconCode}/>
         <div className={classes.Info}>
             <h1>{props.weather.temp}°</h1>
-            <h3>{props.weather.descriptionFull}</h3>
+            <h4>{props.weather.descriptionFull}</h4>
         </div>
     </div>
 );
