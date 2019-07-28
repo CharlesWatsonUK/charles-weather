@@ -11,7 +11,7 @@ const navItem = (props) => {
   }
 
   return(
-    <li className={styleClass}>
+    <li className={styleClass} onClick={props.clicked}>
       <a className={classes.Link}>{props.name}</a>
     </li>
   );

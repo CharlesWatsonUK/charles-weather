@@ -1,0 +1,28 @@
+.AlertModal {
+    position: fixed;
+    box-shadow: 3px 3px 3px rgb(88, 96, 121);
+    background-color: white;
+    width: 90%;
+    margin-left: 5%;
+    top: 70px;
+    transition: transform 0.5s ease-out;
+    z-index: 200;
+}
+
+.AlertModalClosed {
+    @extend .AlertModal;
+    transform: translateY(-500px);
+}
+
+.AlertModalOpen {
+    @extend .AlertModal;
+    transform: translateY(0);
+}
+
+/* Desktop styles */
+@media(min-width: 500px){
+    .AlertModal {
+        width: 40%;
+        margin-left: 30%;
+    }
+}

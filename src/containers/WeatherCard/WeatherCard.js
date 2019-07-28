@@ -16,10 +16,7 @@ class WeatherCard extends Component {
         this.updateCurrentWeather();
     }
 
-
-
     async updateCurrentWeather(){
-        const location = this.state.location;
         let promise = APIServices.getWeather(this.props.location.city, this.props.location.country, 'metric');
         await promise.then((res) => {
             const cleanedRes = APIServices.cleanWeatherData(res); 
