@@ -21,7 +21,6 @@ class WeatherCard extends Component {
         await promise.then((res) => {
             const cleanedRes = APIServices.cleanWeatherData(res); 
             this.setState({currentWeather: cleanedRes});
-            console.log(this.state);
         });
     }
 

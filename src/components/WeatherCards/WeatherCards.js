@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import classes from './WeatherCards.module.scss';
 
 import WeatherCard from '../../containers/WeatherCard/WeatherCard';
-import Weather from '../../template/Weather';
 
 class WeatherCards extends Component {
 

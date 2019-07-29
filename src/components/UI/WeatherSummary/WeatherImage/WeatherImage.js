@@ -34,14 +34,14 @@ const weatherImage = (props) => {
         case '11n': iconName = icon11d; break;
         case '13d': iconName = icon13d; break;
         case '13n': iconName = icon13d; break;
-        case '13d': iconName = icon50d; break;
-        case '13n': iconName = icon50d; break;
+        case '50d': iconName = icon50d; break;
+        case '50n': iconName = icon50d; break;
         default: iconName = icon02d;
     }
 
     return(
         <div className={classes.WeatherImage}>
-            <img src={iconName}/>
+            <img src={iconName} alt={iconName}/>
         </div>
     );
 }
