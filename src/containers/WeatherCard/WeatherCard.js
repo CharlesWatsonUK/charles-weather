@@ -27,7 +27,7 @@ class WeatherCard extends Component {
     render(){
         return(
             <div className={classes.WeatherCard}>
-                <WeatherCardHeader location={this.props.location.city}/>
+                <WeatherCardHeader location={this.props.location.city} delete={this.props.delete}/>
                 <WeatherCardContent currentWeather={this.state.currentWeather}/>
             </div>
         );

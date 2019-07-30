@@ -4,7 +4,7 @@ import classes from './WeatherSummary.module.scss';
 import WeatherImage from './WeatherImage/WeatherImage';
 
 const weatherSummary = (props) => (
-    <div className={classes.WeatherSummary}>
+    <div className={[classes.WeatherSummary, props.className].join(' ')}>
         <WeatherImage icon={props.weather.iconCode}/>
         <div className={classes.Info}>
             <h1>{props.weather.temp}°</h1>

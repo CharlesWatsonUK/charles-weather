@@ -20,8 +20,9 @@ h3 {
     padding: 10px 0px 20px 0px;
 }
 
-.FormItem input, select{
-    width: 60%;
+.FormItem input{
+    width: 80%;
+    margin-left: 10%;
     font-family: 'Titillium Web', sans-serif;
     font-size: 1em;
 }
@@ -42,8 +43,10 @@ h3 {
         margin-left: 25%;
     }
 
-    .FormItem input, select{
+    .FormItem input{
         font-size: 1em;
+        width: 100%;
+        text-align: center;
     }
 
     .Button {

@@ -6,7 +6,7 @@ import WeatherCardOptions from'./WeatherCardOptions/WeatherCardOptions';
 const weatherCardHeader = (props) => (
     <div className={classes.WeatherCardHeader}>
         <h2>{props.location}</h2>
-        <WeatherCardOptions/>
+        <WeatherCardOptions delete={props.delete}/>
     </div>
 );
 

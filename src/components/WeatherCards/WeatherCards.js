@@ -1,33 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import classes from './WeatherCards.module.scss';
 
 import WeatherCard from '../../containers/WeatherCard/WeatherCard';
 
-class WeatherCards extends Component {
-
-    state = {
-        locations: [
-            {
-                city: 'Cosby',
-                country: 'UK'
-            },
-            {
-                city: 'Marbella',
-                country: 'ES'
-            }
-        ]
-    }
-
-    render(){
-        const locations = [...this.state.locations];
-        let locationsToDisplay = locations.map((location, idx) => (
-            <WeatherCard key={idx} location={location}/>));
-        return(
-            <div className={classes.WeatherCards}>
-                {locationsToDisplay}
-            </div>
-        );
-    }
+const weatherCards = (props) => {
+    let locationsToDisplay = props.locations.map((location, idx) => (
+        <WeatherCard key={idx} location={location} delete={location => props.deleteCard(location)}/>));
+    return(
+        <div className={classes.WeatherCards}>
+            {locationsToDisplay}
+        </div>
+    );
 }
    
-export default WeatherCards;
+export default weatherCards;
