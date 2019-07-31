@@ -1,37 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import classes from './WeatherCard.module.scss';
-import APIServices from '../../service/api/APIServices';
 
 import WeatherCardHeader from '../../components/WeatherCards/WeatherCardHeader/WeatherCardHeader';
 import WeatherCardContent from '../../components/WeatherCards/WeatherCardContent/WeatherCardContent';
-import Weather from '../../template/Weather';
 
-class WeatherCard extends Component {
+const weatherCard = (props) => (
+    <div className={classes.WeatherCard}>
+        <WeatherCardHeader 
+            location={{city: props.location.city, country: props.location.country}}
+            delete={props.delete}
+        />
+        <WeatherCardContent
+            currentWeather={props.location.weather}
+        />
+    </div>
+);
 
-    state = {
-        currentWeather: new Weather()
-    }
-
-    componentDidMount(){
-        this.updateCurrentWeather();
-    }
-
-    async updateCurrentWeather(){
-        let promise = APIServices.getWeather(this.props.location.city, this.props.location.country, 'metric');
-        await promise.then((res) => {
-            const cleanedRes = APIServices.cleanWeatherData(res); 
-            this.setState({currentWeather: cleanedRes});
-        });
-    }
-
-    render(){
-        return(
-            <div className={classes.WeatherCard}>
-                <WeatherCardHeader location={this.props.location.city} delete={this.props.delete}/>
-                <WeatherCardContent currentWeather={this.state.currentWeather}/>
-            </div>
-        );
-    }
-}
-
-export default WeatherCard;
+export default weatherCard;

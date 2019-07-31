@@ -1,10 +1,10 @@
-import {BASE_URL, TOKEN_ID} from '../../global/Variables';
+import {BASE_URL} from '../../global/Variables';
 import Weather from '../../template/Weather';
 
 const APIServices = {
 
-    getWeather(city, country, units){
-        const url = `${BASE_URL}weather?q=${city},${country}&units=${units}&${TOKEN_ID}`;
+    getWeather(city, country, units, key){
+        const url = `${BASE_URL}weather?q=${city},${country}&units=${units}&APPID=${key}`;
         return(
             fetch(url)
             .then((res) => res.json())

@@ -6,6 +6,18 @@
     margin: 1px 8px 1px 8px;
 }
 
+.Delete:hover {
+    color: rgb(156, 39, 39);
+}
+
+.Up:hover {
+    color: rgb(46, 136, 46);
+}
+
+.Down:hover {
+    color: rgb(175, 152, 18);
+}
+
 /* Desktop styles */
 @media (min-width: 500px){
     .WeatherCardOption {

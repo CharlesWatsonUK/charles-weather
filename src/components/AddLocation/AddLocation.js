@@ -6,20 +6,31 @@ import APIServices from '../../service/api/APIServices';
 import AlertModal from '../UI/AlertModal/AlertModal';
 import VerifyLocation from './VerifyLocation/VerifyLocation';
 
+
 class AddLocation extends Component {
+
+    constructor(props){
+        super(props);
+        this.inputRef = React.createRef();
+    }
 
     state = {
         location: {
-            country: 'United Kingdom',
-            city: 'London'
+            country: null,
+            city: null
         },
+        searchString: null,
         weather: null,
         locationValid: false,
         showResult: false
     }
 
     timeout = null;
-    
+
+    componentDidMount(){
+       
+    }
+
     updateCountryHandler = (e) => {
         let state = {...this.state};
         state.location.country = e.target.value;
@@ -36,8 +47,7 @@ class AddLocation extends Component {
     stoppedTypingHandler = () => {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
-            console.log(this.state.location.city)
-            if(this.state.location.city != ''){
+            if(this.state.location.city !== ''){
                 this.submitHandler();
                 this.setState({showResult: true});
             }
@@ -62,7 +72,7 @@ class AddLocation extends Component {
     }
 
     async getCurrentWeather(){
-        let promise = APIServices.getWeather(this.state.location.city, this.state.location.country, 'metric');
+        let promise = APIServices.getWeather(this.state.location.city, this.state.location.country, 'metric', this.props.apiKey);
         await promise
         .then((res) => {
             const cleanedRes = APIServices.cleanWeatherData(res); 
@@ -93,6 +103,7 @@ class AddLocation extends Component {
                         <div className={classes.FormItem}>
                             <input
                                 type='text'
+                                ref={this.inputRef}
                                 onChange={this.updateCityHandler}
                                 onKeyUp={this.stoppedTypingHandler}
                                 onKeyDown={this.startedTypingHandler}

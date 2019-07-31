@@ -1,3 +1,16 @@
 .WeatherCards {
     margin-top: 60px;
 }
+
+.Button {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 15px;
+}
+
+@media (min-width: 500px) {
+    .Button {
+        width: 30%;
+        margin-left: 35%;
+    }
+}

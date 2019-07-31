@@ -1,17 +1,79 @@
 import React, {Component} from 'react';
+import APIServices from '../../service/api/APIServices';
+import Weather from '../../template/Weather';
 
 import WeatherCards from '../WeatherCards/WeatherCards';
 import Toolbar from '../Nav/Toolbar/Toolbar';
 import Sidedrawer from '../Nav/Sidedrawer/Sidedrawer';
 import AddLocation from '../AddLocation/AddLocation';
+import Welcome from '../Welcome/Welcome';
+
+const initState = {
+    welcomeOpen: true,
+    sidedrawerOpen: false,
+    addLocationOpen: false,
+    locations: [],
+    units: 'metric',
+    apiKey: null
+}
 
 class Layout extends Component {
     
-    state = {
-        sidedrawerOpen: false,
-        addLocationOpen: true,
-        locations: [],
-        units: 'metric'
+    constructor(props){
+        super(props);
+
+        this.loadUserState()
+    }
+
+    loadUserState = () => {
+        const userState = JSON.parse(localStorage.getItem('charles-weather'));
+        console.log(userState)
+        if(userState != null){
+            const locations = userState.locations.map(location => {
+                return {
+                    city: location.city,
+                    country: location.country,
+                    weather: new Weather()
+                };
+            });
+            this.state = {
+                welcomeOpen: false,
+                sidedrawerOpen: false,
+                addLocationOpen: false,
+                locations: locations,
+                units:'metric',
+                apiKey: userState.apiKey
+            };
+        }else{
+            this.state = initState;
+        }
+    }
+
+    keyChangeHandler = (e) => {
+        const apiKey = e.target.value;
+        this.setState({apiKey: apiKey});
+    }
+    
+    saveUserState = () => {
+        const locations = [... this.state.locations];
+        const locationsToSave = locations.map(location => {
+            return {
+                city: location.city,
+                country: location.country
+            };
+        });
+        const userState = {
+            locations: locationsToSave,
+            units: this.state.units,
+            apiKey: this.state.apiKey
+        }
+        localStorage.setItem('charles-weather', JSON.stringify(userState));
+        this.loadUserState();
+        this.closeWelcomeHandler();
+    }
+
+    componentDidMount(){
+        this.refreshAll();
     }
 
     openCloseSidedrawerHandler = () => {
@@ -30,17 +92,50 @@ class Layout extends Component {
         }
     }
 
-    newLocationHandler = (location) => {
-        let locations = [...this.state.locations];
-        locations.push(location);
-        this.setState({locations: locations});
-        this.openCloseAddLocationHandler(); 
+    closeWelcomeHandler = () => {
+        this.setState({welcomeOpen: false});
     }
 
-    deleteWeatherCardHandler = (locationToDelete) => {
+    refreshAll = async() => {
+        let locations = [... this.state.locations];
+        locations.forEach(async(locaton) => {
+            await this.refreshLocation(locaton.city, locaton.country);
+        });
+    }
+
+    refreshLocation = async(city, country) => {
+        const promise = APIServices.getWeather(city, country, 'metric', this.state.apiKey);
+        return promise.then((res) => {
+            const cleanedRes = APIServices.cleanWeatherData(res);
+            let locations = [...this.state.locations];
+            const refreshIndex = locations.findIndex(location => location.city === city && location.country === country);
+            if(refreshIndex >= 0){
+                locations[refreshIndex].weather = cleanedRes;
+            }else{
+                locations.push({
+                    city: city,
+                    country: country,
+                    weather: cleanedRes
+                });
+            }
+            this.setState({locations: locations});
+            this.saveUserState();
+        });
+    }
+
+    addLocationHandler = (location) => {
+        this.refreshLocation(location.city, location.country);
+        this.openCloseAddLocationHandler();  
+    }
+
+    deleteLocationHandler = (locationToDelete) => {
         let locations = [...this.state.locations];
-        locations.splice(locations.find((location) => location === locationToDelete));
+        locations.splice(
+            locations.findIndex(
+                (location) => location.city === locationToDelete.city && location.country === locationToDelete.country)
+        , 1);
         this.setState({locations: locations});
+        this.saveUserState();
     }
 
     render(){
@@ -50,10 +145,15 @@ class Layout extends Component {
                     openCloseSidedrawer={this.openCloseSidedrawerHandler}
                     addLocation={this.openCloseAddLocationHandler}
                 />
+                <Welcome
+                    open={this.state.welcomeOpen}
+                    keyChange={this.keyChangeHandler}
+                    submit={this.saveUserState}/>
                 <AddLocation 
                     open={this.state.addLocationOpen}
                     close={this.openCloseAddLocationHandler}
-                    saveLocation={this.newLocationHandler}
+                    saveLocation={this.addLocationHandler}
+                    apiKey={this.state.apiKey}
                 />
                 <Sidedrawer 
                     open={this.state.sidedrawerOpen}
@@ -61,7 +161,8 @@ class Layout extends Component {
                 />
                 <WeatherCards
                     locations={this.state.locations}
-                    deleteCard={this.deleteWeatherCardHandler}
+                    deleteCard={this.deleteLocationHandler}
+                    addLocation={this.openCloseAddLocationHandler}
                 />
             </div>
         );

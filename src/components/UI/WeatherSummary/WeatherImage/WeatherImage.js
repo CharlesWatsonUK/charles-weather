@@ -12,7 +12,7 @@ import icon10d from '../../../../assets/weather-icons/10d.svg';
 import icon10n from '../../../../assets/weather-icons/01n.svg';
 import icon11d from '../../../../assets/weather-icons/11d.svg';
 import icon13d from '../../../../assets/weather-icons/13d.svg';
-import icon50d from '../../../../assets/weather-icons/13d.svg';
+import icon50d from '../../../../assets/weather-icons/50d.svg';
 
 const weatherImage = (props) => {
     
