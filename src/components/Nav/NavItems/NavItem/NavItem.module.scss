@@ -6,6 +6,11 @@
     margin-top: 8px;
 }
 
+.Link {
+    color: white;
+    text-decoration: none;
+}
+
 .NavItemToolbar {
     @extend .NavItem;
     width: 8%;

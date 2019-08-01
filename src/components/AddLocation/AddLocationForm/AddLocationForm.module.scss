@@ -1,0 +1,29 @@
+.Form {
+    display: block;
+    margin-top: 15px;
+}
+
+.FormItem {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px 0px 20px 0px;
+}
+
+.Button {
+    width: 100%;
+}
+
+@media (min-width: 500px) { 
+    .FormItem {
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    .FormItem input{
+        font-size: 1em;
+        width: 80%;
+        text-align: center;
+    }
+}
