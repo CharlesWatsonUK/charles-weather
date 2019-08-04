@@ -7,10 +7,9 @@ import AlertModal from '../../components/UI/AlertModal/AlertModal';
 import VerifyLocation from '../../components/AddLocation/VerifyLocation/VerifyLocation';
 import AddLocationForm from '../../components/AddLocation/AddLocationForm/AddLocationForm';
 import Weather from '../../template/Weather';
-import LocalStorageServices from '../../service/LocalStorageServices';
 
 const initState = {
-    searchLocation: new Location(),
+    searchLocation: new Location(0, '', 'GB'),
     verifiedLocationWeatherData: new Weather(),
     locationValid: false,
     showResult: false
@@ -63,9 +62,7 @@ class AddLocation extends Component {
     }
 
     saveLocationHandler = () => {
-        let userState = LocalStorageServices.getUserState();
-        userState.locations.push(this.state.verifiedLocationWeatherData.location);
-        LocalStorageServices.setUserState(userState);
+        this.props.addLocation(this.state.verifiedLocationWeatherData)
         this.setState(initState);
         this.props.close();
     }

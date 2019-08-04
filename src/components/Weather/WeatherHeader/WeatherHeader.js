@@ -7,7 +7,10 @@ import WeatherOptions from'./WeatherOptions/WeatherCardOptions';
 const weatherHeader = (props) => (
     <div className={classes.WeatherCardHeader}>
         <h2>{`${props.location.city}, ${countries.find(country => country.code === props.location.country).name}`}</h2>
-        <WeatherOptions delete={props.delete}/>
+        <WeatherOptions 
+            delete={props.delete}
+            promote={props.promote}
+            demote={props.demote}/>
     </div>
 );
 

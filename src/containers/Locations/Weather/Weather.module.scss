@@ -8,14 +8,14 @@
 
  /* Small desktop / tablet styles */
  @media (min-width: 1100px){
-    .WeatherCard {
+    .Weather {
         width: 90%;
         margin-left: 5%;
     }
 
     /* Desktop styles */
     @media (min-width: 540px){
-    .WeatherCard {
+    .Weather {
         box-shadow: 5px;
         width: 50%;
         box-shadow: 1em;
