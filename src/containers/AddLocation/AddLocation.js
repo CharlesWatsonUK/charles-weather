@@ -38,22 +38,23 @@ class AddLocation extends Component {
         });  
     }
 
-    verifyLocation = () => {
+    verifyLocation = async() => {
         const promise = APIServices.fetchWeather(this.state.searchLocation);
-        promise
+        await promise
             .then(data => {
-                this.setState({
-                    verifiedLocationWeatherData: data,
-                    locationValid: true,
-                    showResult: true
-                });
+                if(data != null){
+                    this.setState({
+                        verifiedLocationWeatherData: data,
+                        locationValid: true,
+                        showResult: true
+                    });
+                }else{
+                    this.setState({
+                        locationValid: false,
+                        showResult: true
+                    });
+                }
             })
-            .catch(err => {
-                this.setState({
-                    locationValid: false,
-                    showResult: true
-                });
-            });
     }
 
     closeHandler = () => {

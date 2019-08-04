@@ -9,7 +9,7 @@ const weatherDetails = (props) => {
     const pressure = `${props.weather.pressure} hPa`;
 
     return(
-        <div className={classes.WeatherDetails}>
+        <div className={[classes.WeatherDetails, props.className].join(' ')}>
             <WeatherDetail key='wind' info={windInfo} iconClass='fas fa-wind'/>
             <WeatherDetail key='humidity' info={humidity} iconClass='fas fa-water'/>
             <WeatherDetail key='pressure' info={pressure} iconClass='fas fa-tachometer-alt'/>

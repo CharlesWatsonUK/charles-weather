@@ -1,14 +1,14 @@
 import React from 'react';
-import classes from './WeatherCardHeader.module.scss';
+import classes from './WeatherHeader.module.scss';
 import countries from '../../../static/countries.json';
 
-import WeatherCardOptions from'./WeatherCardOptions/WeatherCardOptions';
+import WeatherOptions from'./WeatherOptions/WeatherCardOptions';
 
-const weatherCardHeader = (props) => (
+const weatherHeader = (props) => (
     <div className={classes.WeatherCardHeader}>
         <h2>{`${props.location.city}, ${countries.find(country => country.code === props.location.country).name}`}</h2>
-        <WeatherCardOptions delete={props.delete}/>
+        <WeatherOptions delete={props.delete}/>
     </div>
 );
 
-export default weatherCardHeader;
+export default weatherHeader;

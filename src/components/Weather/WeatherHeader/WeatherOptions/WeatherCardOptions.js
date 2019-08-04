@@ -10,8 +10,7 @@ const weatherCardOptions = (props) => {
         <div className={classes.WeatherCardOptions}>
             <i className={[faStyleUp, classes.WeatherCardOption, classes.Up].join(' ')}></i>
             <i className={[faStyleDown, classes.WeatherCardOption, classes.Down].join(' ')}></i>
-            <i 
-                className={[faStyleDelete, classes.WeatherCardOption, classes.Delete].join(' ')}
+            <i className={[faStyleDelete, classes.WeatherCardOption, classes.Delete].join(' ')}
                 onClick={props.delete}></i>
         </div>
     );

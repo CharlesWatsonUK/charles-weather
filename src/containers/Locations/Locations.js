@@ -2,24 +2,34 @@ import React, {Component} from 'react';
 import classes from './Locations.module.scss';
 import APIServices from '../../service/APIServices';
 
-import Weather from './Weather/Weather';
 import Button from '../../components/UI/Button/Button';
 import AddLocation from '../AddLocation/AddLocation';
+import Weather from '../../containers/Locations/Weather/Weather';
 
 class Locations extends Component {
     
     state = {
         weatherData: [],
-        addLocationOpen: false
+        test: null,
+        addLocationOpen: false,
+        load: false
     }
 
     componentDidMount(){
         this.loadWeatherData();
     }
 
-    loadWeatherData = () => {
-        APIServices.fetchWeathers()
-            .then(res => this.setState({weatherData: res}));
+    loadWeatherData = async() => {
+        const promise = APIServices.fetchWeathers();
+        await promise
+            .then(data => {
+                this.setState({
+                    weatherData: data,
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
     
     newLocationHandler = () => {
@@ -36,14 +46,11 @@ class Locations extends Component {
     }
 
     render(){
-        const locationsToDisplay = this.state.weatherData.map((location) => 
-                <Weather 
-                    key={location.location.id}
-                    data={location}
-                    delete={this.loadWeatherData}/>);
-        console.log(locationsToDisplay)
-            
-
+        const locationsToDisplay = this.state.weatherData.map(
+            location => <Weather 
+                key={location.location.id}
+                data={location}
+                deleted={this.loadWeatherData}/>)
         return(
             <div className={classes.WeatherCards}>
                 {locationsToDisplay}

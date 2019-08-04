@@ -9,13 +9,13 @@ const APIServices = {
      * Fetch one weather object, using city and country
      * 
      */
-    async fetchWeather(location){
+    fetchWeather(location){
         const userState = LocalStorageServices.getUserState();
         const url = `${BASE_URL}weather?q=${location.city},${location.country}&units=${userState.units}&APPID=${userState.apiKey}`;
         return(
             fetch(url)
                 .then((res) => res.json().then(data => this.formatWeatherResponse(data)))
-                .catch((err) => {console.log(err)})
+                .catch((err) => null)
         );
     },
 
@@ -27,8 +27,11 @@ const APIServices = {
         const userState = LocalStorageServices.getUserState();
         const locations = userState.locations;
         let weathers = [];
-        locations.forEach(async location => {
-            await this.fetchWeather(location).then(res => weathers.push(res));
+        await this.asyncForEach(locations, async (location) => {
+            const promise = this.fetchWeather(location);
+            await promise
+                    .then((data) => {weathers.push(data)})
+                    .catch((err) => {console.log(err)});
         });
         return weathers;
     },
@@ -113,6 +116,12 @@ const APIServices = {
         }
         LocalStorageServices.setUserState(newUserState);
         return affordRequest;
+    },
+
+    async asyncForEach(arr, cb){
+        for(let idx = 0; idx < arr.length; idx++){
+            await cb(arr[idx], idx, arr);
+        }
     }
 }
 

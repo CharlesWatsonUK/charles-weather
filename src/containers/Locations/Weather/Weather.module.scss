@@ -1,15 +1,9 @@
-.WeatherCard {
+.Weather {
     margin-top: 7px;
     box-shadow: 3px 3px 3px rgb(88, 96, 121);
     background-color: rgba(164, 189, 226, 0.856);
     padding-bottom: 8px;
 }
-
-
-
-
-
-
 
 
  /* Small desktop / tablet styles */
@@ -26,6 +20,18 @@
         width: 50%;
         box-shadow: 1em;
         margin-left: 25%;
+    }
+
+    .WeatherContent {
+        display: flex;
+    }
+
+    .WeatherSummary {
+        width: 30%;
+    }
+    
+    .WeatherDetails {
+        width: 70%;
     }
 }
 }
