@@ -1,0 +1,27 @@
+.Settings {
+    margin: 10px 5px 20px 5px;
+}
+
+.FormItem {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+}
+
+.FormItem p, input{
+    width: 50%;
+    font-size: 1.2em;
+}
+
+.Button {
+    width: 50%;
+    margin-top: 20px;
+}
+
+@media (min-width: 500px){
+    .FormItem {
+        width: 70%;
+        margin-left: auto;
+    } 
+}

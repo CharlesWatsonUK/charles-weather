@@ -5,14 +5,15 @@ import Locations from '../Locations/Locations';
 import Toolbar from '../../components/Nav/Toolbar/Toolbar';
 import Sidedrawer from '../../components/Nav/Sidedrawer/Sidedrawer';
 import Welcome from '../../components/Welcome/Welcome';
+import Settings from '../../components/Settings/Settings';
 
 class Layout extends Component {
     
     state = {
         sidedrawerOpen: false,
-        addLocationOpen: false,
         welcomeOpen: false,
-        userHasState: false
+        userHasState: false,
+        settingsOpen: false
     }
  
     componentDidMount(){
@@ -35,11 +36,14 @@ class Layout extends Component {
         }
     }
 
-    openCloseAddLocationHandler = () => {
-        if(this.state.addLocationOpen){
-            this.setState({addLocationOpen: false});
+    openCloseSettingsHanlder = () => {
+        if(this.state.settingsOpen){
+            this.setState({settingsOpen: false});
         }else{
-            this.setState({addLocationOpen: true});
+            this.setState({
+                settingsOpen: true,
+                sidedrawerOpen: false
+            });
         }
     }
 
@@ -54,6 +58,7 @@ class Layout extends Component {
             <div>
                 <Toolbar 
                     openCloseSidedrawer={this.openCloseSidedrawerHandler}
+                    settingsClicked={this.openCloseSettingsHanlder}
                 />
                 <Welcome
                     open={this.state.welcomeOpen}
@@ -61,7 +66,11 @@ class Layout extends Component {
                 <Sidedrawer 
                     open={this.state.sidedrawerOpen}
                     close={this.openCloseSidedrawerHandler}
+                    settingsClicked={this.openCloseSettingsHanlder}
                 />
+                <Settings
+                    open={this.state.settingsOpen}
+                    close={this.openCloseSettingsHanlder}/>
                 {this.state.userHasState ? <Locations/> : null}
             </div>
         );

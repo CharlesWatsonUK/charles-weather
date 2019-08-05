@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './NavItem.module.scss';
 
+import Button from '../../../UI/Button/Button';
+
 const navItem = (props) => {
 
   let styleClass;
@@ -12,7 +14,9 @@ const navItem = (props) => {
 
   return(
     <li className={styleClass} onClick={props.clicked}>
-      <a href='/' className={classes.Link}>{props.name}</a>
+      <Button 
+        className={classes.Button}
+        type='Transparent'>{props.name}</Button>
     </li>
   );
 }

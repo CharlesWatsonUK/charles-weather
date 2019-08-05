@@ -6,9 +6,10 @@
     margin-top: 8px;
 }
 
-.Link {
-    color: white;
+.Button {
     text-decoration: none;
+    height: 100%;
+    color: white;
 }
 
 .NavItemToolbar {
@@ -19,9 +20,5 @@
 .NavItemSidedrawer {
     @extend .NavItem;
     width: 80%;
-}
-
-a:hover {
-    color: rgb(75, 158, 226);
-    cursor: pointer;
+    margin-top: 15px;
 }

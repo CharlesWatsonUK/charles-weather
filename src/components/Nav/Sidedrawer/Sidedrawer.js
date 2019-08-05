@@ -14,9 +14,11 @@ const sidedrawer = (props) => {
     
     return(
         <div>
-            <Backdrop show={props.open} clicked={props.closeSidedrawer}/>
+            <Backdrop show={props.open} clicked={props.close}/>
             <div className={styleClass}>
-                <NavItems context='sidedrawer'/>
+                <NavItems 
+                    context='sidedrawer'
+                    settingsClicked={props.settingsClicked}/>
             </div>
         </div>
     );

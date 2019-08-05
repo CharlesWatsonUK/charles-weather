@@ -20,31 +20,23 @@ class Welcome extends Component {
         userState.apiKey = this.apiKeyInputRef.current.value;
         LocalStorageServices.setUserState(userState);
         this.props.close();
+        window.location.replace('/');
     }
 
     render(){
         return(
-            <AlertModal open={this.props.open}>
+            <AlertModal open={this.props.open} className={classes.Modal}>
                 <div className={classes.Welcome}>
                     <h3>Welcome</h3>
                     <h4>Follow the steps below to get started...</h4>
-                    <ul>
+                    <ol>    
                         <li>
-                            <ul>
-                                <li>
-                                    <p>This site uses OpenWeather® as its data source. 
-                                        To use this site please open the link below to sign up for free.
-                                    </p>
-                                
-                                </li>
-                                <li>
-                                    <p>
-                                        Once you have singed up go to your acounts page, and copy your API token.
-                                    </p>
-                                </li>
-                            </ul>
+                            <p>This site uses OpenWeather® as its data source. 
+                                To use this site please open the link below to sign up for free.
+                                Once you have singed up, go to your acounts page and copy your API key/ token.
+                            </p>
                             <a href='https://openweathermap.org/appid'>Get an OpenWeather® account</a>
-                        </li>
+                        </li>        
                         <li>
                             <p>Paste your API key here...</p>
                             <input type='text' className={classes.Input} ref={this.apiKeyInputRef}/>
@@ -60,7 +52,7 @@ class Welcome extends Component {
                             <p>Agree to the following, and lets go!</p>
                             <p>blah blah blah blah</p>
                         </li>
-                    </ul>
+                    </ol>
                     <Button type='Success' className={classes.Button} clicked={this.submitUser}>I agree</Button>
                 </div>
             </AlertModal>

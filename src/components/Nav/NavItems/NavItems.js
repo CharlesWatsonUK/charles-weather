@@ -14,7 +14,10 @@ const navItems = (props) => {
 
     return(
         <ul className={styleClass}>
-            <NavItem name='Preferences' context={props.context}/>
+            <NavItem 
+                name='Settings'
+                context={props.context}
+                clicked={props.settingsClicked}/>
             <NavItem name='About' context={props.context}/>
         </ul>
     );

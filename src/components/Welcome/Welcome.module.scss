@@ -4,6 +4,8 @@
     top: 70px;
     background-color: white;
     padding: 5px 5px 20px 5px;
+    overflow-y: scroll;
+    height: 300px;
 }
 
 .Button {
@@ -22,4 +24,15 @@
 .RadioGroup label {
     width: 40%;
     margin: 0 10px 0 10px;
+}
+
+@media (min-width: 500px){
+    .Modal {
+        top: 70px;
+    }
+
+    .Welcome {
+        overflow-y: auto;
+        height: auto;
+    }
 }
