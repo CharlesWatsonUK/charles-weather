@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import classes from './Weather.module.scss';
 
-import WeatherSummary from '../../../components/Weather/WeatherSummary/WeatherSummary';
-import WeatherHeader from '../../../components/Weather/WeatherHeader/WeatherHeader';
-import WeatherDetails from '../../../components/Weather/WeatherDetails/WeatherDetails';
+import WeatherSummary from './WeatherSummary/WeatherSummary';
+import WeatherHeader from './WeatherHeader/WeatherHeader';
+import WeatherDetails from './WeatherDetails/WeatherDetails';
 
 class Weather extends Component {
     

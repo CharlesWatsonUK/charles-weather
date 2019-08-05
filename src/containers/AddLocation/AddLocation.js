@@ -58,24 +58,29 @@ class AddLocation extends Component {
 
     closeHandler = () => {
         this.props.close();
-        this.setState(initState);
+        this.setState({...initState});
     }
 
     saveLocationHandler = () => {
         this.props.addLocation(this.state.verifiedLocationWeatherData)
-        this.setState(initState);
+        this.setState({...initState});
         this.props.close();
     }
 
     render(){
         return(
-            <AlertModal open={this.props.open} close={this.props.close}>
+            <AlertModal 
+                open={this.props.open} 
+                close={this.props.close}
+                className={classes.Modal}>
                 <div className={classes.AddLocation}>
                     <h3>Add a new location</h3>
                     <AddLocationForm
                         countryChange={this.countryChangeHandler}
                         cityChange={this.cityChangeHandler}
-                        verify={this.verifyLocation}/>
+                        verify={this.verifyLocation}
+                        city={this.state.searchLocation.city}
+                        country={this.state.searchLocation.country}/>
                     {this.state.showResult ? 
                         this.state.locationValid ? 
                             <VerifyLocation 

@@ -7,7 +7,7 @@ const weatherSummary = (props) => (
     <div className={[classes.WeatherSummary, props.className].join(' ')}>
         <WeatherImage icon={props.weather.iconCode}/>
         <div className={classes.Info}>
-            <h1>{props.weather.temp}°</h1>
+            <h1>{props.weather.temp.toFixed(1)}°</h1>
             <h4>{props.weather.descriptionFull}</h4>
         </div>
     </div>

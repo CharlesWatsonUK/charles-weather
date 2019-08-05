@@ -16,7 +16,10 @@ const addLocationForm = (props) => {
         <div className={classes.Form}>
             <div className={classes.FormItem}>
                     <label>Country</label>
-                    <select className={classes.FormItem} onChange={e => props.countryChange(e)}>
+                    <select 
+                        className={classes.FormItem}
+                        onChange={e => props.countryChange(e)}
+                        value={props.country}>
                         {countryOptions}
                     </select>
             </div>
@@ -25,7 +28,8 @@ const addLocationForm = (props) => {
                 <input
                     type='text'
                     onChange={e => props.cityChange(e)}
-                    placeholder='City, town or village'/>
+                    placeholder='City, town or village'
+                    value={props.city}/>
             </div> 
             <div className={classes.FormItem}>
                 <Button

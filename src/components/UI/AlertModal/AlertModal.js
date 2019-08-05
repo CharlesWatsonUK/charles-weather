@@ -14,7 +14,7 @@ const alertModal = (props) => {
     return(
         <div>
             <Backdrop show={props.open} clicked={props.close}/>
-            <div className={styleClass}>
+            <div className={[styleClass, props.className].join(' ')}>
                 {props.children}
             </div>
         </div>

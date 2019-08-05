@@ -5,7 +5,7 @@ import LocalStorageServices from '../../service/LocalStorageServices';
 
 import Button from '../../components/UI/Button/Button';
 import AddLocation from '../AddLocation/AddLocation';
-import Weather from '../../containers/Locations/Weather/Weather';
+import Weather from '../../components/Weather/Weather';
 import MaxLocations from '../../components/AddLocation/MaxLocations/MaxLocations';
 
 class Locations extends Component {
