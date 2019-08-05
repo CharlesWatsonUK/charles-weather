@@ -14,7 +14,6 @@ const navItems = (props) => {
 
     return(
         <ul className={styleClass}>
-            <NavItem name='New Location' context={props.context} clicked={props.addLocation}/>
             <NavItem name='Preferences' context={props.context}/>
             <NavItem name='About' context={props.context}/>
         </ul>

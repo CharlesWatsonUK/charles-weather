@@ -7,8 +7,6 @@ import Button from '../../components/UI/Button/Button';
 import AddLocation from '../AddLocation/AddLocation';
 import Weather from '../../containers/Locations/Weather/Weather';
 import MaxLocations from '../../components/AddLocation/MaxLocations/MaxLocations';
-import { throwStatement } from '@babel/types';
-
 
 class Locations extends Component {
     

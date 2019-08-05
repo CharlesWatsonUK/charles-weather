@@ -1,8 +1,8 @@
-.WeatherCardOptions {
+.WeatherOptions {
     display: flex;
 }
 
-.WeatherCardOption {
+.WeatherOption {
     margin: 1px 8px 1px 8px;
 }
 
@@ -15,12 +15,12 @@
 }
 
 .Down:hover {
-    color: rgb(175, 152, 18);
+    color: rgb(175, 107, 18);
 }
 
 /* Desktop styles */
 @media (min-width: 500px){
-    .WeatherCardOption {
+    .WeatherOption {
         margin: 1px 4px 1px 4px;
     }
 }

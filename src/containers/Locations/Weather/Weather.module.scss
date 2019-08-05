@@ -1,8 +1,15 @@
 .Weather {
     margin-top: 7px;
     box-shadow: 3px 3px 3px rgb(88, 96, 121);
-    background-color: rgba(164, 189, 226, 0.856);
     padding-bottom: 8px;
+}
+
+.WeatherDay {
+    background-color: rgba(164, 189, 226, 0.856);
+}
+
+.WeatherNight {
+    background-color: rgba(139, 139, 139, 0.856)
 }
 
 

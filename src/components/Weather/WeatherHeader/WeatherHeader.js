@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './WeatherHeader.module.scss';
 import countries from '../../../static/countries.json';
 
-import WeatherOptions from'./WeatherOptions/WeatherCardOptions';
+import WeatherOptions from'./WeatherOptions/WeatherOptions';
 
 const weatherHeader = (props) => (
     <div className={classes.WeatherCardHeader}>

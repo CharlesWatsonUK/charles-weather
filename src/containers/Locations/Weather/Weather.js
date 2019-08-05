@@ -20,8 +20,15 @@ class Weather extends Component {
     }
 
     render(){
+        let dayNightClass = '';
+        if(this.props.data.iconCode.indexOf('d') >= 0){
+            dayNightClass = 'WeatherDay';
+        }else{
+            dayNightClass = 'WeatherNight';
+        }
+        
         return(
-            <div className={classes.Weather}>
+            <div className={[classes.Weather, classes[dayNightClass]].join(' ')}>
                 <WeatherHeader 
                     location={this.props.data.location}
                     delete={this.delete}
