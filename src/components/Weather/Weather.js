@@ -4,6 +4,7 @@ import classes from './Weather.module.scss';
 import WeatherSummary from './WeatherSummary/WeatherSummary';
 import WeatherHeader from './WeatherHeader/WeatherHeader';
 import WeatherDetails from './WeatherDetails/WeatherDetails';
+import Button from '../UI/Button/Button';
 
 class Weather extends Component {
     
@@ -17,6 +18,10 @@ class Weather extends Component {
 
     demote = () => {
         this.props.move(this.props.data.location.id, 1);
+    }
+
+    forecast = () => {
+        this.props.forecast(this.props.data.location.id);
     }
 
     render(){

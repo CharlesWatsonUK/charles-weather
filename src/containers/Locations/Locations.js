@@ -7,6 +7,7 @@ import Button from '../../components/UI/Button/Button';
 import AddLocation from '../AddLocation/AddLocation';
 import Weather from '../../components/Weather/Weather';
 import MaxLocations from '../../components/AddLocation/MaxLocations/MaxLocations';
+import PorcessingModal from '../../components/UI/ProcessingModal/ProcessingModal';
 
 class Locations extends Component {
     
@@ -15,7 +16,7 @@ class Locations extends Component {
         test: null,
         addLocationOpen: false,
         maxLocationsOpen: false,
-        load: false
+        loading: false
     }
 
     componentDidMount(){
@@ -29,15 +30,16 @@ class Locations extends Component {
     }
 
     loadWeatherData = async() => {
+        this.setState({loading: true});
         const promise = APIServices.fetchWeathers();
         await promise
             .then(data => {
-                this.setState({
-                    weatherData: data,
-                });
+                this.setState({weatherData: data});
             })
             .catch(err => {
                 console.log(err);
+            }).finally(() => {
+                this.setState({loading: false});
             });
     }
     
@@ -114,10 +116,10 @@ class Locations extends Component {
                 move={this.moveLocationHandler}/>)
         return(
             <div className={classes.WeatherCards}>
-                <MaxLocations
-                    open={this.state.maxLocationsOpen}
-                    close={this.openCloseMaxLocationsHandler}/>
                 {locationsToDisplay}
+                {this.state.loading ? 
+                    <PorcessingModal className={classes.ProcessingModal}/>
+                    : null}
                 <Button 
                     type='Neutral'
                     className={classes.Button}
@@ -127,6 +129,9 @@ class Locations extends Component {
                     open={this.state.addLocationOpen}
                     close={this.openCloseAddLocationHandler}
                     addLocation={this.addLocationHandler}/> 
+                <MaxLocations
+                    open={this.state.maxLocationsOpen}
+                    close={this.openCloseMaxLocationsHandler}/>
             </div>
         );
     }

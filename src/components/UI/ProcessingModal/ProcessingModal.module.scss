@@ -1,0 +1,46 @@
+.Wrapper {
+    height: 13px;
+    width: 70%;
+    margin-left: 15%;
+    top: 10px;
+    background-color: rgb(58, 58, 58);
+    position: fixed;  
+}
+
+.Wrapper p {
+    color: rgb(180, 180, 180);
+    text-align: center;
+    font-size: 1em;
+    margin-top: 2px;
+}
+
+.Spinner {
+    margin-top: 4px;
+    text-align: center;
+    z-index: 9999;
+    display: block;
+    width: 10%;
+    height: 5px;
+    background-color: rgb(21, 106, 163);
+    animation: slide 0.3s ease-in-out infinite;
+    -webkit-animation: slide 0.3s ease-in-out infinite;
+}
+
+@media(min-width: 500px) {
+    .Wrapper {
+        width: 40%;
+        margin-left: 30%;
+    }
+}
+
+@keyframes slide {
+    100% {
+        -webkit-transform: translateX(900%)
+    }
+  }
+  
+  @-webkit-keyframes slide {
+    100% {
+        -webkit-transform: translateX(900%)
+    }
+  }

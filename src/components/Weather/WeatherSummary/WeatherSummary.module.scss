@@ -2,8 +2,20 @@
     display: flex;
 }
 
+.Forecast {
+    font-size: 1.5em;
+    text-align: center;
+    width: 30%;
+    color: rgb(59, 59, 59);
+}
+
+.Forecast i:hover {
+    color: rgb(25, 87, 129)
+}
+
 .Info {
     display: block;
+    width: 30%;
     text-transform: capitalize;
 }
 
@@ -11,5 +23,4 @@
     h4 {
         margin: 0;
     }
-    
 }
