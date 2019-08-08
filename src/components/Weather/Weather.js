@@ -4,7 +4,6 @@ import classes from './Weather.module.scss';
 import WeatherSummary from './WeatherSummary/WeatherSummary';
 import WeatherHeader from './WeatherHeader/WeatherHeader';
 import WeatherDetails from './WeatherDetails/WeatherDetails';
-import Button from '../UI/Button/Button';
 
 class Weather extends Component {
     
@@ -40,8 +39,14 @@ class Weather extends Component {
                     promote={this.promote}
                     demote={this.demote}/>
                 <div className={classes.WeatherContent}>
-                    <WeatherSummary className={classes.WeatherSummary} weather={this.props.data}/>
-                    <WeatherDetails className={classes.WeatherDetails} weather={this.props.data}/>
+                    <WeatherSummary 
+                        className={classes.WeatherSummary} 
+                        weather={this.props.data}
+                        forecast={this.forecast}
+                        forecastOption={true}/>
+                    <WeatherDetails 
+                        className={classes.WeatherDetails} 
+                        weather={this.props.data}/>
                 </div>
             </div>
         );

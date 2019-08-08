@@ -1,0 +1,26 @@
+.Forecast {
+    padding: 10px 5px 15px 5px;
+}
+
+.ForecastNow {
+    width: 100%;
+}
+
+.ForecastDays {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.Modal {
+    top: 0px;
+    width: 100%;
+    
+}
+
+@media(min-width: 500px){
+    .Modal {
+        top: 30px;
+        width: 60%;
+        margin-left: 20%;
+    }
+}

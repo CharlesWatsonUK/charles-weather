@@ -10,9 +10,11 @@ const weatherSummary = (props) => (
             <h1>{props.weather.temp.toFixed(1)}°</h1>
             <h4>{props.weather.descriptionFull}</h4>
         </div>
-        <div className={classes.Forecast}>
-            <i class="fas fa-binoculars"></i>
-        </div>
+        {props.forecastOption ? 
+            <div className={classes.Forecast}>
+                <i className="fas fa-binoculars" onClick={props.forecast}></i>
+            </div>
+        : null}
     </div>
 );
 

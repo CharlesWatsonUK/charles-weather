@@ -42,7 +42,7 @@ class Settings extends Component {
 
     render(){
         return(
-            <AlertModal open={this.props.open} close={this.props.close}>
+            <AlertModal open={this.props.open} close={this.props.close} className={classes.Modal}>
                 <div className={classes.Settings}>
                     <h3>Settings</h3>
                     <div className={classes.FormItem}>

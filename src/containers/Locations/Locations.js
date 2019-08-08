@@ -8,6 +8,7 @@ import AddLocation from '../AddLocation/AddLocation';
 import Weather from '../../components/Weather/Weather';
 import MaxLocations from '../../components/AddLocation/MaxLocations/MaxLocations';
 import PorcessingModal from '../../components/UI/ProcessingModal/ProcessingModal';
+import Forecast from '../Forecast/Forecast';
 
 class Locations extends Component {
     
@@ -16,7 +17,9 @@ class Locations extends Component {
         test: null,
         addLocationOpen: false,
         maxLocationsOpen: false,
-        loading: false
+        loading: false,
+        forecastOpen: false,
+        forecastId: null
     }
 
     componentDidMount(){
@@ -34,6 +37,7 @@ class Locations extends Component {
         const promise = APIServices.fetchWeathers();
         await promise
             .then(data => {
+                data = data.filter(data => data !== null);
                 this.setState({weatherData: data});
             })
             .catch(err => {
@@ -42,6 +46,7 @@ class Locations extends Component {
                 this.setState({loading: false});
             });
     }
+
     
     newLocationHandler = () => {
         this.loadWeatherData();
@@ -107,13 +112,42 @@ class Locations extends Component {
         }
     }
 
+    openCloseForecastHandler = (locationId) => {
+        if(this.state.forecastOpen){
+            this.setState({forecastOpen: false});
+        }else{
+            this.setState({
+                forecastOpen: true,
+                forecastId: locationId
+            });
+        }
+    }
+
     render(){
+        // Weather locations to display from state
         const locationsToDisplay = this.state.weatherData.map(
             location => <Weather 
                 key={location.location.id}
                 data={location}
                 delete={this.deleteLocationHandler}
-                move={this.moveLocationHandler}/>)
+                move={this.moveLocationHandler}
+                forecast={this.openCloseForecastHandler}/>)
+        
+        // Current weather data for location open in forecast.
+       let forecastJSX = null;
+        if(this.state.forecastOpen){
+            const forecastLocationCurrentWeather = 
+                this.state.weatherData[this.state.weatherData.findIndex(
+                data => data.location.id === this.state.forecastId)];
+            forecastJSX = 
+                <Forecast
+                open={this.state.forecastOpen}
+                close={this.openCloseForecastHandler}
+                currentWeather={forecastLocationCurrentWeather}/>;
+        }else{
+            forecastJSX = null;
+        }
+            
         return(
             <div className={classes.WeatherCards}>
                 {locationsToDisplay}
@@ -125,6 +159,7 @@ class Locations extends Component {
                     className={classes.Button}
                     clicked={this.openCloseAddLocationHandler}>Add a location!
                 </Button>
+                {forecastJSX}
                 <AddLocation
                     open={this.state.addLocationOpen}
                     close={this.openCloseAddLocationHandler}

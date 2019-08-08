@@ -2,6 +2,11 @@
     margin: 10px 5px 20px 5px;
 }
 
+.Modal {
+    width: 90%;
+    margin-left: 5%;
+}
+
 .FormItem {
     width: 90%;
     margin: auto;
@@ -24,4 +29,9 @@
         width: 70%;
         margin-left: auto;
     } 
+
+    .Modal {
+        width: 40%;
+        margin-left: 30%;
+    }
 }

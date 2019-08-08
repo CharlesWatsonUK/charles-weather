@@ -22,7 +22,9 @@ class Weather {
             this.humidity = humidity;
             this.windSpeed = windSpeed;
             this.windDirection = windDirection;
-            this.dt = dt;
+            
+            this.dt = new Date(0);
+            this.dt.setUTCSeconds(dt);
         } 
 }
 
