@@ -5,6 +5,7 @@ import APIServices from '../../service/APIServices';
 import AlertModal from '../../components/UI/AlertModal/AlertModal';
 import ForecastNow from '../../components/Forecast/ForecastNow/ForecastNow';
 import ForecastDays from '../../components/Forecast/ForecastDays/ForecastDays';
+import ForecastHeader from '../../components/Forecast/ForecastHeader/ForecastHeader';
 
 class Forecast extends Component{
     
@@ -32,10 +33,20 @@ class Forecast extends Component{
     }
     
     render(){ 
+        
+        let dayNightStyle;
+        if(this.props.currentWeather.iconCode.indexOf('d') >= 0){
+            dayNightStyle = 'WeatherDay';
+        }else{
+            dayNightStyle = 'WeatherNight';
+        }
+        
         return(
             <AlertModal open={this.props.open} close={this.props.close} className={classes.Modal}>
-                <div className={classes.Forecast}>
-                    <h3>{this.props.currentWeather.location.name} Forecast</h3>
+                <div className={[classes.Forecast, classes[dayNightStyle]].join(' ')}>
+                    <ForecastHeader
+                        data={this.props.currentWeather}
+                        close={this.props.close}/>
                     <ForecastNow 
                         data={this.props.currentWeather}
                         className={classes.ForecastNow}/>

@@ -1,15 +1,10 @@
-
-
-.WeatherDay {
-    background-color: rgba(164, 189, 226, 0.856);
-}
-
-.WeatherNight {
-    background-color: rgba(139, 139, 139, 0.856)
-}
-
 .WeatherSummary {
     width: 80%;
+}
+
+.Time {
+    font-size: 1.2em;
+    text-align: center;
 }
 
 @media (min-width: 500px) {

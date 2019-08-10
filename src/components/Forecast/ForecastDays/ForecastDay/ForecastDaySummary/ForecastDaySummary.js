@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from './ForecastDaySummary.scss';
+import classes from './ForecastDaySummary.module.scss';
 import WeatherAbstractionServices from '../../../../../service/WeatherAbstractionServices';
 
-import WeatherImage from '../../../../Weather/WeatherSummary/WeatherImage/WeatherImage';
+import WeatherImage from '../../../../UI/WeatherImage/WeatherImage';
 
 const forecastDaySummary = (props) => {
     const dayHigh = WeatherAbstractionServices.maxTemp(props.data);
@@ -11,9 +11,13 @@ const forecastDaySummary = (props) => {
     
     return(
         <div className={[classes.ForecastDaySummary, props.className].join(' ')}>
-            <WeatherImage icon={dayIcon}/>
-            <p>{dayHigh}</p>
-            <p>{dayLow}</p>
+            <WeatherImage 
+                icon={dayIcon}
+                className={classes.WeatherImage}/>
+            <div className={classes.WeatherDetails}>
+                <h2>{dayHigh}°</h2>
+                <p>{dayLow}°</p>
+            </div>
         </div>
     );
     

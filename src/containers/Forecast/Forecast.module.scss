@@ -2,19 +2,26 @@
     padding: 10px 5px 15px 5px;
 }
 
+.WeatherDay {
+    background-color: rgba(164, 189, 226, 0.856);
+}
+
+.WeatherNight {
+    background-color: rgba(139, 139, 139, 0.856)
+}
+
 .ForecastNow {
     width: 100%;
 }
 
 .ForecastDays {
-    height: 500px;
+    height: 50vh;
     overflow-y: scroll;
 }
 
 .Modal {
     top: 0px;
     width: 100%;
-    
 }
 
 @media(min-width: 500px){
@@ -22,5 +29,10 @@
         top: 30px;
         width: 60%;
         margin-left: 20%;
+    }
+
+    .ForecastDays {
+        height: 500px;
+        overflow-y: scroll;
     }
 }

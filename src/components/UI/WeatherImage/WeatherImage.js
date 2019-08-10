@@ -1,18 +1,18 @@
 import React from 'react';
 import classes from './WeatherImage.module.scss';
 
-import icon01d from '../../../../assets/weather-icons/01d.svg';
-import icon01n from '../../../../assets/weather-icons/01n.svg';
-import icon02d from '../../../../assets/weather-icons/02d.svg';
-import icon02n from '../../../../assets/weather-icons/02n.svg';
-import icon03d from '../../../../assets/weather-icons/03d.svg';
-import icon04d from '../../../../assets/weather-icons/04d.svg';
-import icon09d from '../../../../assets/weather-icons/09d.svg';
-import icon10d from '../../../../assets/weather-icons/10d.svg';
-import icon10n from '../../../../assets/weather-icons/01n.svg';
-import icon11d from '../../../../assets/weather-icons/11d.svg';
-import icon13d from '../../../../assets/weather-icons/13d.svg';
-import icon50d from '../../../../assets/weather-icons/50d.svg';
+import icon01d from '../../../assets/weather-icons/01d.svg';
+import icon01n from '../../../assets/weather-icons/01n.svg';
+import icon02d from '../../../assets/weather-icons/02d.svg';
+import icon02n from '../../../assets/weather-icons/02n.svg';
+import icon03d from '../../../assets/weather-icons/03d.svg';
+import icon04d from '../../../assets/weather-icons/04d.svg';
+import icon09d from '../../../assets/weather-icons/09d.svg';
+import icon10d from '../../../assets/weather-icons/10d.svg';
+import icon10n from '../../../assets/weather-icons/01n.svg';
+import icon11d from '../../../assets/weather-icons/11d.svg';
+import icon13d from '../../../assets/weather-icons/13d.svg';
+import icon50d from '../../../assets/weather-icons/50d.svg';
 
 const weatherImage = (props) => {
     
@@ -40,7 +40,7 @@ const weatherImage = (props) => {
     }
 
     return(
-        <div className={classes.WeatherImage}>
+        <div className={[classes.WeatherImage, props.className].join(' ')}>
             <img src={iconName} alt={iconName}/>
         </div>
     );

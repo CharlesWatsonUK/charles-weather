@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.WeatherImage {
+    width: 30%;
+}
+
 .Forecast {
     font-size: 1.5em;
     text-align: center;
@@ -22,5 +26,9 @@
 @media (min-width: 500px){
     h4 {
         margin: 0;
+    }
+
+    .WeatherImage {
+        width: 50%;
     }
 }

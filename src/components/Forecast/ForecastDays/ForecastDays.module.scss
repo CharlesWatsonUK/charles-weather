@@ -1,7 +1,12 @@
-.ForecastDays {
-    overflow-y: scroll;
-    margin-top: 10px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgb(189, 189, 189)
+
+
+@media (min-width: 500px){
+
+    .ForecastDays {
+        margin-top: 10px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: rgb(148, 148, 148);
+        background-color: rgba(195, 208, 228, 0.856);
+    }
 }

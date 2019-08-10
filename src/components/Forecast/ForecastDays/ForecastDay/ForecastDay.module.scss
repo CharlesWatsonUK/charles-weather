@@ -1,7 +1,8 @@
 .ForecastDay {
     width: 100%;
     background-color: rgba(164, 189, 226, 0.856);
-    margin: 2px 0 2px 0;
+    margin: 4px 0 4px 0;
+    height: 20vh;
 }
 
 .ForecastDaySummary {
@@ -10,4 +11,10 @@
 
 .ForecastTimes {
     width: 70%;
+}
+
+@media (min-width: 500px) {
+    .ForecastDay {
+        height: auto;
+    }
 }
