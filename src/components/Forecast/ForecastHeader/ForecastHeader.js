@@ -9,7 +9,7 @@ const forecastHeader = (props) => {
     const mins = UtilsServices.formatTimeVal(props.data.dt.getMinutes());
 
     return(
-        <div className={classes.ForecastHeader}>
+        <div className={[classes.ForecastHeader, props.className].join(' ')}>
             <div className={classes.Title}>
                 <h4 className={classes.Location}>{props.data.location.city+', '+countries.find(country => country.code === props.data.location.country).name}</h4>
                 <h4 className={classes.Time}>{`${hours}:${mins}`}</h4>

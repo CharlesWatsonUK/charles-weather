@@ -2,24 +2,25 @@
     width: 100%;
     background-color: rgba(164, 189, 226, 0.856);
     margin: 4px 0 4px 0;
-    height: 20vh;
+ 
     display: flex;
 }
 
 .ForecastDaySummary {
-    width: 80%;
+    width: 25%;
 }
 
 .ForecastTimes {
-    width: 70%;
+    width: 75%;
 }
 
+/* Desktop styles */
 @media (min-width: 500px) {
-    .ForecastDay {
-        height: auto;
+    .ForecastDaySummary {
+        width: 25%;
     }
 
-    .ForecastDaySummary {
-        width: 30%;
+    .ForecastTimes {
+        width: 75%;
     }
 }

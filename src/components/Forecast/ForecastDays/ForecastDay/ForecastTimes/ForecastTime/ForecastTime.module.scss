@@ -2,14 +2,16 @@
     width: 100%;
     padding: 3px 0 3px 0;
     text-align: center;
+    padding: 2px 2px 0 2px;
 }
 
 .ForecastTimeContent {
-    display: flex;
+    display: block;
 }
 
 .WeatherImage {
-   width: 50%;
+   width: 70%;
+   margin: auto;
 }
 
 .DayTime {
@@ -30,15 +32,8 @@
 }
 
 
-@media (min-width: 1100px){
-    .ForecastTime {
-        width: 20%;
-    }
-
-    .ForecastTimeContent {
-        display: block;
-    }
-
+@media (min-width: 700px){
+    
     .WeatherImage {
         width: 60%;
         margin: auto;

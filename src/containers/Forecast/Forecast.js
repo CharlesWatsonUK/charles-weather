@@ -46,7 +46,8 @@ class Forecast extends Component{
                 <div className={[classes.Forecast, classes[dayNightStyle]].join(' ')}>
                     <ForecastHeader
                         data={this.props.currentWeather}
-                        close={this.props.close}/>
+                        close={this.props.close}
+                        className={classes.ForecastHeader}/>
                     <ForecastNow 
                         data={this.props.currentWeather}
                         className={classes.ForecastNow}/>

@@ -12,7 +12,7 @@ const forecastTimes = (props) => {
                     data={data}/>);
   
     return(
-        <div className={classes.ForecastTimes}>
+        <div className={[classes.ForecastTimes, props.className].join(' ')}>
             {forecastTimesToDisplay}
         </div>
     );

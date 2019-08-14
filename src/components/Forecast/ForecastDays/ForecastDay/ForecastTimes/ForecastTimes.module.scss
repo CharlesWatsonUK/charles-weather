@@ -1,6 +1,6 @@
 .ForecastTimes {
-    width: 70%;
-    overflow-y: scroll;
+    overflow-x: scroll;
+    display: flex;
 }
 
 @media (min-width: 500px) and (max-width: 1099px){
@@ -10,8 +10,9 @@
 
 @media (min-width: 700px){
     .ForecastTimes {
-        width: 70%;
         display: flex;
+        height: 100%;
+        overflow-x: auto;
     }
 }
 

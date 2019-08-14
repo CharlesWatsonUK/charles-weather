@@ -7,6 +7,14 @@
     padding-top: 5px;
 }
 
-.WeatherDetails {
-    //width: 50%;
+@media (max-width: 600px) {
+   .ForecastDaySummary {
+       display: block;
+       text-align: center;
+   }
+
+   .WeatherImage {
+    width: 60%;
+    margin: auto;
+}
 }
