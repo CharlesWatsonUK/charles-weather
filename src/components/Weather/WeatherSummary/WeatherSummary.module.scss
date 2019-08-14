@@ -1,15 +1,17 @@
 .WeatherSummary {
     display: flex;
+    justify-content: center;
 }
 
 .WeatherImage {
-    width: 30%;
+   width: 30%;
+   
 }
 
 .Forecast {
     font-size: 1.5em;
     text-align: center;
-    width: 30%;
+    width: 20%;
     color: rgb(59, 59, 59);
 }
 
@@ -23,12 +25,22 @@
     text-transform: capitalize;
 }
 
-@media (min-width: 500px){
+/* Desktop styles */
+@media (min-width: 1100px){
     h4 {
         margin: 0;
     }
 
     .WeatherImage {
-        width: 50%;
+        width: 30%;
     }
 }
+
+/* Small desktop and tablet styles */
+@media (min-width: 540px) and (max-width: 1099px){
+
+    .WeatherImage {
+        width: 20%;
+    }
+}
+

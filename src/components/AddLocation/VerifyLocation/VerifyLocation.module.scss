@@ -1,29 +1,31 @@
 .VerifyLocation {
-    width: 100%;
-}
-
-.WeatherSummary {
-    width: 90%;
-    margin-left: 5%;
-}
-
-.Buttons {
-    width: 90%;
-    margin-left: 5%;
+    width: 95%;
+    margin: auto;
 }
 
 .Button {
     width: 50%;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 501px) and (max-width: 1699px) {
+    .VerifyLocation {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+
+@media (min-width: 1700px) {
+    .VerifyLocation {
+        width: 60%;
+        margin: auto;
+    }
+
     .WeatherSummary {
-        width: 50%;
-        margin-left: 25%;
+        width: 100%;
     }
 
     .Buttons {
-        width: 50%;
-        margin-left: 25%;
+        width: 100%;
     }
 }

@@ -1,0 +1,46 @@
+.ForecastTime {
+    width: 100%;
+    padding: 3px 0 3px 0;
+    text-align: center;
+}
+
+.ForecastTimeContent {
+    display: flex;
+}
+
+.WeatherImage {
+   width: 50%;
+}
+
+.DayTime {
+    background-color: rgba(164, 189, 226, 0.856);
+}
+
+.NightTime {
+    background-color: rgba(139, 139, 139, 0.856)
+}
+
+.Time {
+    color: rgb(37, 47, 75);
+}
+
+
+@media (min-width: 500px) and (max-width: 1099px){
+
+}
+
+
+@media (min-width: 1100px){
+    .ForecastTime {
+        width: 20%;
+    }
+
+    .ForecastTimeContent {
+        display: block;
+    }
+
+    .WeatherImage {
+        width: 60%;
+        margin: auto;
+    }
+}

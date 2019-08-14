@@ -22,3 +22,9 @@
     width: 80%;
     margin-top: 15px;
 }
+
+@media (min-width: 540px) and (max-width: 1099px) {
+    .NavItemToolbar {
+        width: 15%;
+    }
+}

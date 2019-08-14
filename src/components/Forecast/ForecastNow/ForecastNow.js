@@ -13,7 +13,8 @@ const forecastNow = (props) => {
                 forecastOption={false}
                 className={classes.WeatherSummary}/>
             <WeatherDetails
-                weather={props.data}/>
+                weather={props.data}
+                className={classes.WeatherDetails}/>
         </div>
     )
 };

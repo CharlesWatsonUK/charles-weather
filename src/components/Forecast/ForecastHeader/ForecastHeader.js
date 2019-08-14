@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './ForecastHeader.module.scss';
 import countries from '../../../static/countries.json';
-import UtilsServices from '../../../service/UtilsService';
+import UtilsServices from '../../../service/UtilsServices';
 
 const forecastHeader = (props) => {
     

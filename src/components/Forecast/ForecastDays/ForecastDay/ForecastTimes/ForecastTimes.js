@@ -1,10 +1,22 @@
 import React from 'react';
 import classes from './ForecastTimes.module.scss';
+import UtilsServices from '../../../../../service/UtilsServices';
 
-const forecastTimes = (props) => (
-    <div className={forecastTimes}>
+import ForecastTime from './ForecastTime/ForecastTime';
 
-    </div>
-);
+const forecastTimes = (props) => {
+    
+    const forecastTimesToDisplay = UtilsServices.padTimesArray(props.data).map((data, idx) => 
+        <ForecastTime
+                    key={idx}
+                    data={data}/>);
+  
+    return(
+        <div className={classes.ForecastTimes}>
+            {forecastTimesToDisplay}
+        </div>
+    );
+   
+};
 
 export default forecastTimes;

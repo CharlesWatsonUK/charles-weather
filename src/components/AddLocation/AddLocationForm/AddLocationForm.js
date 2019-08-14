@@ -17,7 +17,6 @@ const addLocationForm = (props) => {
             <div className={classes.FormItem}>
                     <label>Country</label>
                     <select 
-                        className={classes.FormItem}
                         onChange={e => props.countryChange(e)}
                         value={props.country}>
                         {countryOptions}

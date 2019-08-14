@@ -3,10 +3,11 @@
     background-color: rgba(164, 189, 226, 0.856);
     margin: 4px 0 4px 0;
     height: 20vh;
+    display: flex;
 }
 
 .ForecastDaySummary {
-    width: 30%;
+    width: 80%;
 }
 
 .ForecastTimes {
@@ -16,5 +17,9 @@
 @media (min-width: 500px) {
     .ForecastDay {
         height: auto;
+    }
+
+    .ForecastDaySummary {
+        width: 30%;
     }
 }

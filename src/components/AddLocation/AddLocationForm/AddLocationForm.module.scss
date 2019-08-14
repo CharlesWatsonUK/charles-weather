@@ -11,19 +11,28 @@
     padding: 10px 0px 20px 0px;
 }
 
+.FormItem input, select {
+    width: 70%;
+}
+
+.FormItem label {
+    width: 30%;
+}
+
 .Button {
     width: 100%;
 }
 
-@media (min-width: 500px) { 
-    .FormItem {
-        width: 50%;
-        margin-left: 25%;
-    }
+@media (min-width: 1700px) {
+   .Form {
+       width: 70%;
+       margin: auto;
+   }
+}
 
-    .FormItem input{
-        font-size: 1em;
+@media (max-width: 1699px) and (min-width: 700px) {
+    .Form {
         width: 80%;
-        text-align: center;
+        margin: auto;
     }
 }

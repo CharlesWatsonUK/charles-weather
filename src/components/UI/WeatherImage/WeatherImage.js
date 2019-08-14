@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from './WeatherImage.module.scss';
 
 import icon01d from '../../../assets/weather-icons/01d.svg';
 import icon01n from '../../../assets/weather-icons/01n.svg';
@@ -40,7 +39,7 @@ const weatherImage = (props) => {
     }
 
     return(
-        <div className={[classes.WeatherImage, props.className].join(' ')}>
+        <div className={props.className}>
             <img src={iconName} alt={iconName}/>
         </div>
     );

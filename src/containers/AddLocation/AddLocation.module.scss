@@ -43,7 +43,15 @@ select {
     height: 50px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 700px) and (max-width: 1399px) {
+    .Modal {
+        width: 60%;
+        margin-left: 20%;
+        top: 70px;
+    }
+}
+
+@media (min-width: 1400px) {
     .AddLocation {
         padding: 10px 0px 15px 0px;
     }
