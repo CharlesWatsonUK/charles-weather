@@ -29,12 +29,17 @@ class Settings extends Component {
     }
 
     apiKeyChangeHandler = (e) => {
-        this.setState({apiKey: e.target.value})
+        this.setState({apiKey: e.target.value});
     }
+
+    unitsChangeHandler = (e) => {
+        this.setState({units: e.target.value});
+    } 
 
     submitUser = () => {
         let userState = LocalStorageServices.getUserState();
         userState.apiKey = this.state.apiKey;
+        userState.units = this.state.units;
         LocalStorageServices.setUserState(userState);
         this.props.close();
         window.location.replace('/');
@@ -51,6 +56,13 @@ class Settings extends Component {
                             value={this.state.apiKey}
                             onChange={e => this.apiKeyChangeHandler(e)}
                             ref={this.apiKeyInputRef}/>
+                    </div>
+                    <div className={classes.FormItem}>
+                        <p>Units: </p>
+                        <select onChange={e => this.unitsChangeHandler(e)} value={this.state.units}>
+                            <option value='metric'>Metric</option>
+                            <option value='imperial'>Imperial</option>
+                        </select>
                     </div>
                     <div className={classes.FormItem}>
                         <Button 

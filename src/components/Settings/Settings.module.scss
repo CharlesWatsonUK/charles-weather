@@ -24,7 +24,23 @@
     margin-top: 20px;
 }
 
-@media (min-width: 500px){
+@media (min-width: 500px) and (max-width: 799px) {
+    .Modal {
+        width: 70%;
+        margin-left: 15%;
+        
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+    .Modal {
+        width: 50%;
+        margin-left: 25%;
+        
+    }
+}
+
+@media (min-width: 1200px) {
     .FormItem {
         width: 70%;
         margin-left: auto;
