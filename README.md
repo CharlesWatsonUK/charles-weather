@@ -19,5 +19,4 @@ $ npm install
 $ npm start
 ```
 
-### Use this product online!
-To come shortly...
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [see license](https://github.com/facebook/create-react-app/blob/master/LICENSE).
