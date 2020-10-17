@@ -19,4 +19,8 @@ $ npm install
 $ npm start
 ```
 
+### Screenshots
+
+![Set api key.](https://github.com/CharlesWatsonUK/charles-weather/tree/master/images/enter_api_key.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [see license](https://github.com/facebook/create-react-app/blob/master/LICENSE).

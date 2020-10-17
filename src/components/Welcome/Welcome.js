@@ -48,10 +48,6 @@ class Welcome extends Component {
                                <label>Imperial <input type='radio' name='units' value='imperial'/></label>
                            </fieldset>
                         </li> */}
-                        <li>
-                            <p>Agree to the following, and lets go!</p>
-                            <p>blah blah blah blah</p>
-                        </li>
                     </ol>
                     <Button type='Success' className={classes.Button} clicked={this.submitUser}>I agree</Button>
                 </div>
