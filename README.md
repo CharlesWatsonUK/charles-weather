@@ -20,6 +20,7 @@ $ npm start
 ```
 
 ### How to use
+This web app is desktop, tablet and mobile friendly!
 #### 1) Enter API key from [OpenWeather](https://openweathermap.org/)
 ![Set api key.](https://github.com/CharlesWatsonUK/charles-weather/blob/master/images/enter_api_key.png)
 
