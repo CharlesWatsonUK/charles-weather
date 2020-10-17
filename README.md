@@ -20,19 +20,19 @@ $ npm start
 ```
 
 ### How to use
-## 1) Enter API key from [OpenWeather](https://openweathermap.org/)
+#### 1) Enter API key from [OpenWeather](https://openweathermap.org/)
 ![Set api key.](https://github.com/CharlesWatsonUK/charles-weather/blob/master/images/enter_api_key.png)
 
-## 2) Add locations you're innterested in
+#### 2) Add locations you're interested in
 ![Set api key.](https://github.com/CharlesWatsonUK/charles-weather/blob/master/images/add_location.png)
 
-## 3) View current weather conditions for your selected locations
+#### 3) View current weather conditions for your selected locations
 ![Set api key.](https://github.com/CharlesWatsonUK/charles-weather/blob/master/images/weather_locations.png)
 
-## 4) View the weather forecast for your locations
+#### 4) View the weather forecast for your locations
 ![Set api key.](https://github.com/CharlesWatsonUK/charles-weather/blob/master/images/forecast.png)
 
-## 5) View and edit your settings
+#### 5) View and edit your settings
 ![Set api key.](https://github.com/CharlesWatsonUK/charles-weather/blob/master/images/settings.png)
 
 
